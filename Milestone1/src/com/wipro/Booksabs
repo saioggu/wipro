@@ -1,0 +1,70 @@
+package com.wipro.encapabs;
+class Author{
+	String name;
+	String email;
+	char gender;
+	Author(String n,String e,char g)
+	{
+		
+		name=n;
+		email=e;
+		gender=g;
+	}
+	public String getName() {
+		return name;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public char getGender() {
+		return gender ;
+	}
+	
+}
+class Book{
+	private String name;
+	Author author;
+	private double price;
+	private int qtyinstock;
+	public Author getAuthor() {
+		return author;
+	}
+	public void setAuthor(Author author)
+	{
+		this.author=author;
+	}
+	public String getName() {
+		return name;
+	}
+	Book (String n){
+		name=n;
+	}
+	public double getprice() {
+		return price;
+	}
+	public void setprice(double price) {
+		this.price=price;
+	}
+	public int getstock() {
+		return qtyinstock;
+	}
+	public void setstock(int qtyinstock) {
+		this.qtyinstock=qtyinstock;
+	}
+}
+
+public class Booksabs {
+	public static void main(String[] args) {
+		Author a =new Author ("rajkundra","rajkundra95@gmail.com",'m');
+		Book b=new Book("Dark knight");
+		b.setAuthor(a);
+		b.setprice(180);
+		b.setstock(265);
+		System.out.println("book name"+b.getName());
+		System.out.println("price of book:"+b.getprice());
+		System.out.println("books in stock:"+b.getstock());
+		System.out.println("author:"+b.getAuthor().getName());
+		
+	}
+
+}
